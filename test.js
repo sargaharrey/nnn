@@ -10,7 +10,7 @@ const fs = require('fs');
 app.use(cors());
 var crawler = require('youtube-crawler');
 app.get('/',(req,res)=>{
-   res.sendFile('./index.html', {root: __dirname })
+   res.sendFile('index.html', {root: __dirname })
 })
 let test
 app.get('/getVideo', async (req, res, next) => {
