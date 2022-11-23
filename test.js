@@ -11,6 +11,9 @@ app.use(cors());
 var crawler = require('youtube-crawler');
 app.use(express.static(__dirname + '/'))
 app.use(express.static(__dirname));
+app.get('/style.css', function(req, res) {
+  res.sendFile(__dirname + "/" + "style.css");
+});
 app.get('/',(req,res)=>{
    res.sendFile(__dirname+'/index.html')
 })
