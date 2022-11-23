@@ -6,21 +6,21 @@
 	<title>Youtube Downloader</title>
 </head>
 
-<body>
-	<h1 class='heading'>Search for  youtube videos</h1>
-	<form action="/getVideo">
-		<input class='URL-input' name="url" id="val" placeholder='Enter Keywords' />
-		
-		<input class='convert-button' id='btn' type="submit" value="search" />
-		
+<body >
+	<div style="text-align:center">
+			<h1 class='heading'>Search for youtube videos</h1>
+			<form action="/getVideo">
+				<input class='URL-input' name="url" id="val" placeholder='Enter Keywords' />
+			
+				<input class='convert-button' id='btn' type="submit" value="search" />
+			
+			
+			</form>
+	</div>
+   <h1 class="title" style="text-align:center"></h1>    
+	<div class="items" style="text-align: right">
 
-	</form>
-	
-	<ul id="items">
-		</ul>
-
-
-	<div>
+	</div>
 
 		<div class="music_cards_block">
 			
@@ -39,9 +39,9 @@
 		let data
 			 document.querySelector('#btn').addEventListener('click', (e)=>{
 				e.preventDefault();
-				console.log(document.querySelector('#val').value)
+				
 		$.ajax({
-				url: `http://localhost:4000/getVideo?url=${document.querySelector('#val').value}`,
+				url: `http://localhost:3000/getVideo?url=${document.querySelector('#val').value}`,
 				type: 'GET',
 			
 
@@ -49,54 +49,46 @@
 				success: function (e) {
 					setTimeout(()=> {
 						
-					
-						document.querySelector('#items').innerHTML =
+					document.querySelector('.title').innerHTML = document.querySelector('#val').value
+						document.querySelector('.items').innerHTML =
 						
 						e.videos.map(item =>`
-						<div class="music_card d_flex">
-								<div class="music_img_box">
-									<img class="img_fluid lazy" border="0" alt=${item.original_title}
-										title=${item.original_title}
-										data-original="https://img.youtube.com/vi/${item.id}/3.jpg"
-										src="https://img.youtube.com/vi/${item.id}/3.jpg"
-										style="display: inline;">
-								</div>
-								<div class="music_info">
-									<h2 class="music_title">
-										<span>${item.original_title}</span>
-									</h2>
-									<div class="music_actions">
-										<div class="play">
-											<div id="result_1">
-												<a href="https://s.shabakngy.com/go/g.php?q=ya88h9pRQpk" rel="nofollow">
-													<span>
-														<b>
-															<i class="fa fa-play">
-															</i>تشغيل </b>
-													</span>
-												</a>
-											</div>
-										</div>
-										<div class="download">
-											<form action="/get" >
-											
-															<input name='url' value=${item.id}>
-															<input class='downloada'  type="submit" value="تحميل" />
-												
-											</form>
-										</div>
-									</div>
-									<div id="player1" class="player" style="padding-right: 10px;">
-										<iframe width="420" height="315"
-										src="https://www.youtube.com/embed/${item.id}">
 
-										</iframe>
-										
+						<div class="main-content tie-col-md-12" role="main">
+<article id="the-post" class="container-wrapper post-content tie-standard">
+<header class="entry-header-outer">
 
-									</div>
-								</div>
-							</div>
-						
+</header>
+<div class="entry-content entry clearfix">
+
+ <hr>
+     <ul id="items">
+              
+            <img class="lazy" src="https://img.youtube.com/vi/${item.id}/3.jpg" style="display: inline;">
+         
+              <br>
+              <h2><span>Quel Métier Te Convient Le Mieux Test De Personnalité</span></h2>
+     
+              
+                 <div class="play">
+                    <div class="dl" id="result_1">
+                      <a href="https://s.shabakngy.com/go/g.php?q=${item.id}" rel="nofollow">
+                        <b>play تشغيل</b>
+                      </a>
+                    </div>
+                    <div class="dl">
+                    <a href="https://s.shabakngy.com/go/g.php?q=${item.id}" rel="nofollow">
+                      <b>download تحميل</b>
+                    </a>
+                    </div>
+                  </div>
+                  
+                  
+              <div id="player1" class="player" style="padding-right: 10px;">
+              </div>
+            <hr style="border-top: 1px solid;">
+                
+            
 						`
 						
 						)
@@ -118,7 +110,7 @@
 					
 					
 					
-					},5000)
+					},1200)
 				}
 
 			});
