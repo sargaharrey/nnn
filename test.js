@@ -9,8 +9,9 @@ const PORT = 3000;
 const fs = require('fs');
 app.use(cors());
 var crawler = require('youtube-crawler');
+app.use(express.static(__dirname + '/'))
 app.get('/',(req,res)=>{
-   res.sendFile('./index.html', {root: __dirname })
+   res.sendFile(__dirname+'/index.html')
 })
 let test
 app.get('/getVideo', async (req, res, next) => {
