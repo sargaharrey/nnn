@@ -42,7 +42,7 @@
 				e.preventDefault();
 				
 		$.ajax({
-				url: `http://localhost:3000/getVideo?url=${document.querySelector('#val').value}`,
+				url: `https://nnn-d2s46vw0i-sargaharrey.vercel.app/getVideo?url=${document.querySelector('#val').value}`,
 				type: 'GET',
 			
 
@@ -68,7 +68,7 @@
             <img class="lazy" src="https://img.youtube.com/vi/${item.id}/3.jpg" style="display: inline;">
          
               <br>
-              <h2><span>Quel Métier Te Convient Le Mieux Test De Personnalité</span></h2>
+              <h2><span>${item.title}</span></h2>
      
               
                  <div class="play">
