@@ -1,0 +1,65 @@
+{
+  "name": "usetube",
+  "version": "2.2.2",
+  "description": "crawl youtube without api key (search videos channels or get all channel/playlist's videos)",
+  "main": "dist/usetube",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node test",
+    "dev": "npm install && npx nodemon -e ts --exec 'npm run build && npm run test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valerebron/usetube.git"
+  },
+  "keywords": [
+    "youtube",
+    "crawler",
+    "scraper",
+    "api",
+    "no",
+    "key",
+    "simple",
+    "javascript",
+    "youtube api",
+    "youtube search",
+    "youtube api no key",
+    "youtube crawler",
+    "youtube scrapper",
+    "youtube open api",
+    "youtube open source",
+    "youtube simple",
+    "youtube playlist",
+    "yt"
+  ],
+  "author": "valerebron",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/valerebron/usetube/issues"
+  },
+  "homepage": "https://github.com/valerebron/usetube#readme",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ffmpeg": "^0.0.4",
+    "ffprobe": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "lodash": "^4.17.19",
+    "nodemon": "^2.0.20",
+    "socket.io": "^2.3.0",
+    "usetube": "^2.2.2",
+    "youtube-crawler": "^0.0.3",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.11.2",
+    "ytdl-core-discord": "^1.2.1"
+  }
+}
