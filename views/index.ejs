@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<link rel='stylesheet'  href='style.css' />
+	<title>Youtube Downloader</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body >
+	<div style="text-align:center">
+			<h1 class='heading'>Search for youtube videos</h1>
+			<form >
+				<input class='URL-input'  id="input_search" name="val" placeholder='Enter Keywords' />
+			
+				<input class='convert-button' id='btn' type="submit" value="search" />
+			
+			
+			</form>
+			
+
+
+			
+	</div>
+   <h1 class="title" style="text-align:center"></h1>    
+	<div class="items" style="text-align: right">
+			 <%  if(test.videos.length > 0){  test.videos.map(function(item) {  %>
+                             
+				<div class="main-content tie-col-md-12" role="main">
+					<article id="the-post" class="container-wrapper post-content tie-standard">
+						<header class="entry-header-outer">
+				
+							</header>
+						<div class="entry-content entry clearfix">
+				
+							
+							
+				
+								 <img class="lazy" src="https://img.youtube.com/vi/<%=item.id%>/3.jpg" style="display: inline;">
+				
+								 <br>
+								 <h2><span><%=  item.title %> </span></h2>
+				
+				
+								 <div class="play">
+									 <div class="dl" id="result_1">
+										 <a href="https://s.shabakngy.com/go/g.php?q=<%=item.id%>" rel="nofollow">
+										 <b>play تشغيل</b>
+											 </a>
+										 </div>
+									 <div class="dl">
+										 <a href="https://s.shabakngy.com/go/g.php?q=<% item.id %>" rel="nofollow">
+											 <b>download تحميل</b>
+											 </a>
+										 </div>
+									 </div>
+				
+				
+								 <div id="player1" class="player">
+									 </div>
+								
+								<hr style="border-top: 1px solid;">
+		
+					<% })} else { %> <h1 style="text-align: center">Nothing to appear</h1> <%}%>
+	
+	</div>
+
+		<div class="music_cards_block">
+			
+	</div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+		integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src='./script.js'></script>
+	<script>
+	
+		
+         if (window.location.href.split('=')[1].length > 0) {
+          document.querySelector('.title').innerHTML = window.location.search.split('=')[1]
+		 }
+		
+		
+
+	
+	</script>
+</body>
+
+</html>
