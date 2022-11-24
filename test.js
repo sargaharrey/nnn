@@ -11,7 +11,7 @@ const bodyParser = require("body-parser");
 app.use(cors());
 var crawler = require('youtube-crawler');
 
-app.use(express.static(__dirname,'/views'))
+app.use(express.static('public'))
 // get our app to use body parser 
 app.use(bodyParser.urlencoded({ extended: true }))
 
