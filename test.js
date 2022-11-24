@@ -35,7 +35,7 @@ let test
 //     res.send("Workd : ", req.body)
 // })
 
-app.get('https://nnn-phi.vercel.app/index', async (req, res, next) => {
+app.get('/index', async (req, res, next) => {
  console.log('test',req.query.val)
   // test = await usetube.getChannelVideos('U C0EXZm7W7F7px2rcqecyC6w', new Date(Date.now() - 7*24*60*60*1000))
   // test = await usetube.getChannelVideos('UC2_OG1L8DLTzQ7UrZVOk7OA') // +50 videos
@@ -60,7 +60,7 @@ app.get('https://nnn-phi.vercel.app/index', async (req, res, next) => {
   res.render('index',{test})
 })
 
-app.post('https://nnn-phi.vercel.app/index/search', (req, res) => {
+app.post('/index/search', (req, res) => {
   res.json(test)
 });
 
