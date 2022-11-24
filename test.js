@@ -16,7 +16,7 @@ var crawler = require('youtube-crawler');
 app.use(bodyParser.urlencoded({ extended: true }))
 
 var ejs = require('ejs');
-const { listen } = require('socket.io');
+
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.redirect('index')
