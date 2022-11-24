@@ -35,7 +35,7 @@ let test
 //     res.send("Workd : ", req.body)
 // })
 
-app.get('/index', async (req, res, next) => {
+app.get('https://nnn-phi.vercel.app/index', async (req, res, next) => {
  console.log('test',req.query.val)
   // test = await usetube.getChannelVideos('U C0EXZm7W7F7px2rcqecyC6w', new Date(Date.now() - 7*24*60*60*1000))
   // test = await usetube.getChannelVideos('UC2_OG1L8DLTzQ7UrZVOk7OA') // +50 videos
@@ -60,7 +60,7 @@ app.get('/index', async (req, res, next) => {
   res.render('index',{test})
 })
 
-app.post('/index/search', (req, res) => {
+app.post('https://nnn-phi.vercel.app/index/search', (req, res) => {
   res.json(test)
 });
 
@@ -77,56 +77,4 @@ app.post('/index/search', (req, res) => {
 // launchTest()
 // crawler('Cat videos', function (results) {
 // 	console.dir(results); //Outputs an array filled with cat videos.
-// });
-app.get('/get', async (req, res, next) => {
-		// let url = req.query;
-     console.log(true)
-
-		let url = req.query.url;
-    console.log(url)
-    // console.log(url)
-		// if(!ytdl.validateURL(url)) {
-		// 	return res.sendStatus(400);
-		// }
-		let title = 'video';
-
-		// await ytdl(`http://www.youtube.com/watch?v=eotUHuimiRk`, {
-		// 	format: 'mp4'
-		// }).pipe(fs.createWriteStream('video.mp4')); 
-
-		res.header('Content-Disposition', `attachment; filename="${title}.mp4"`);
-await		ytdl(`http://www.youtube.com/watch?v=${url}`, {
-			format: 'mp4',
-		}).pipe(res);
-
-res.status('200')
-});
-app.listen(PORT, () => {
-	console.log(`Server Works !!! At port ${PORT}`);
-});
-
-// app.get('/downloadmp3', async (req, res, next) => {
-// 	try {
-// 		var url = req.query.url;
-// 		if(!ytdl.validateURL(url)) {
-// 			return res.sendStatus(400);
-// 		}
-// 		let title = 'audio';
-
-// 		await ytdl.getBasicInfo(url, {
-// 			format: 'mp4'
-// 		}, (err, info) => {
-// 			if (err) throw err;
-// 			title = info.player_response.videoDetails.title.replace(/[^\x00-\x7F]/g, "");
-// 		});
-
-// 		res.header('Content-Disposition', `attachment; filename="${title}.mp3"`);
-// 		ytdl(url, {
-// 			format: 'mp3',
-// 			filter: 'audioonly',
-// 		}).pipe(res);
-
-// 	} catch (err) {
-// 		console.error(err);
-// 	}
 // });
