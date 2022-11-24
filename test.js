@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     res.redirect('index')
 })
 // app.get('/',(req,res)=>{
-//    res.redirect('/index')
+//    res.redirect('views/index')
 // })
 let test
 
