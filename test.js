@@ -10,16 +10,19 @@ const fs = require('fs');
 const bodyParser = require("body-parser");
 app.use(cors());
 var crawler = require('youtube-crawler');
-app.use(express.static(__dirname + '/'))
+
+app.use(express.static(__dirname))
 // get our app to use body parser 
 app.use(bodyParser.urlencoded({ extended: true }))
 
 var ejs = require('ejs');
 app.set('view engine', 'ejs');
-
-app.get('/',(req,res)=>{
-   res.redirect('/index')
+app.get('/', (req, res) => {
+    res.redirect('index')
 })
+// app.get('/',(req,res)=>{
+//    res.redirect('/index')
+// })
 let test
 
 // app.get('/search/:word', async (req, res, next) => {
