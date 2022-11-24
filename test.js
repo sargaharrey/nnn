@@ -11,29 +11,22 @@ const bodyParser = require("body-parser");
 app.use(cors());
 var crawler = require('youtube-crawler');
 
-app.use(express.static('public'))
+app.use(express.static(__dirname,'public'))
 // get our app to use body parser 
 app.use(bodyParser.urlencoded({ extended: true }))
 
 var ejs = require('ejs');
+const { listen } = require('socket.io');
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     res.redirect('index')
 })
 // app.get('/',(req,res)=>{
-//    res.redirect('views/index')
+//    res.redirect('/index')
 // })
 let test
 
-// app.get('/search/:word', async (req, res, next) => {
 
- 
-//   //  test = await usetube.searchVideo(req.query.url) // this is key word
- 
-//     // res.sendFile(__dirname + "/index.html");
-//     console.log('Test api 1')
-//     res.send("Workd : ", req.body)
-// })
 
 app.get('/index', async (req, res, next) => {
  console.log('test',req.query.val)
@@ -64,18 +57,5 @@ app.post('/index/search', (req, res) => {
   res.json(test)
 });
 
-// app.post("/search",(req,res)=>{
-//   console.log(req.body)
-//   res.send(test)
-// })
 
-//  console.log(test)
-// app.post('/send',(req,res,next)=>{
-
-//   return res.json(test)
-// })
-// launchTest()
-// crawler('Cat videos', function (results) {
-// 	console.dir(results); //Outputs an array filled with cat videos.
-// });
-app.listen(3000)
+app,listen(3000)
